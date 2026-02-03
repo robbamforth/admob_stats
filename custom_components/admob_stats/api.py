@@ -30,7 +30,7 @@ class AdMobAPI:
                 token_uri="https://oauth2.googleapis.com/token",
                 client_id=self.client_id,
                 client_secret=self.client_secret,
-                scopes=["https://www.googleapis.com/auth/admob.report"],
+                scopes=["https://www.googleapis.com/auth/admob.readonly"],
             )
             self._service = build("admob", "v1", credentials=credentials)
         return self._service
