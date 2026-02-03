@@ -36,7 +36,8 @@ Creates 16 sensors for
 - earnings
 - impressions
 - ad requests
-- and clicks across today
+- and clicks across
+  - today
   - yesterday
   - this month
   - last month
