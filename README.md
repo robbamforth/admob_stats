@@ -111,7 +111,7 @@ The refresh token allows the integration to access your AdMob data long-term wit
 4.	Sign in with your Google account (same one used for AdMob)
 5.	Click Allow to grant permissions
 
-NOTE: if you see 'Error 403: access_denied', see troubleshppting below.
+#### NOTE: if you see 'Error 403: access_denied', see troubleshooting below.
 
 #### Step 3: Get the Refresh Token
 1.	Click Exchange authorization code for tokens (Step 2 on the left)
@@ -139,7 +139,7 @@ Now you have all four credentials needed:
 <BR><BR>
 ### Troubleshooting
 
-#### Error 403: access_denied
+### 1. Error 403: access_denied
 
 This error occurs because your OAuth consent screen is in "Testing" mode, which restricts access to only approved test users. Here's how to fix it:
 
@@ -160,5 +160,15 @@ If you don't want to manage test users, you can publish the app for personal use
 4.	You'll see a warning that it's unverified - this is fine for personal use
 5.	Users (including you) will see a warning screen during authorization, but you can click Advanced > Go to [App Name] (unsafe) to proceed
 
+<BR><BR>
 
+### 2. Error testing connection: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
 
+This is likely becuase the API URLs are blocked on your network. Allow the following URLs on pi-hole, etc.
+
+•	admob.googleapis.com<BR>
+•	oauth2.googleapis.com<BR>
+•	www.googleapis.com<BR>
+•	accounts.google.com<BR> 
+
+<BR><BR><BR>
