@@ -18,7 +18,7 @@ Monitor your Google AdMob statistics in Home Assistant.
 2. Copy the `custom_components/admob_stats` folder to your Home Assistant config
 3. Restart Home Assistant
 4. Add the integration via UI (Settings > Integrations)
-<BR><BR><BR>
+<BR><BR>
 ## Configuration
 
 You'll need:
@@ -29,13 +29,20 @@ You'll need:
 
 See the [AdMob API docs](https://developers.google.com/admob/api/v1/auth) for setup.
 
-<BR><BR><BR>
+<BR><BR>
 ## Sensors
 
-Creates 16 sensors for earnings, impressions, ad requests, and clicks across today, yesterday, this month, and last month.
+Creates 16 sensors for
+- earnings<
+- impressions
+- ad requests<BR>
+- and clicks across today
+  - yesterday
+  - this month
+  - last month
 
 
-<BR><BR><BR>
+<BR><BR>
 ## How To Get Login Details
 
 ### Setting Up AdMob API Credentials for Home Assistant
@@ -128,7 +135,7 @@ Now you have all four credentials needed:
 •	If you set your OAuth consent screen to "Testing" mode, make sure your Google account is added as a test user<BR>
 •	The AdMob API has rate limits, but the integration polls at reasonable intervals to stay within limits<BR>
 
-<BR><BR><BR>
+<BR><BR>
 ### Troubleshooting
 
 #### Error 403: access_denied
