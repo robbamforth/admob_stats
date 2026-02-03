@@ -48,8 +48,20 @@ class AdMobEarningsSensor(CoordinatorEntity, SensorEntity):
         """Initialize the sensor."""
         super().__init__(coordinator)
         self._period = period
+        self._entry_id = coordinator.config_entry.entry_id  # Add this line
         self._attr_name = f"AdMob {name}"
         self._attr_unique_id = f"admob_{period}_earnings"
+
+    @property
+    def device_info(self):
+        """Return device info."""
+        from .const import DOMAIN
+        return {
+            "identifiers": {(DOMAIN, self._entry_id)},
+            "name": "AdMob Stats",
+            "manufacturer": "Google",
+            "model": "AdMob API",
+        }
 
     @property
     def native_value(self) -> float | None:
@@ -71,6 +83,7 @@ class AdMobEarningsSensor(CoordinatorEntity, SensorEntity):
         return {}
 
 
+
 class AdMobMetricSensor(CoordinatorEntity, SensorEntity):
     """Representation of an AdMob metric sensor."""
 
@@ -81,6 +94,7 @@ class AdMobMetricSensor(CoordinatorEntity, SensorEntity):
         super().__init__(coordinator)
         self._period = period
         self._metric = metric
+        self._entry_id = coordinator.config_entry.entry_id  # Add this line
         self._attr_name = f"AdMob {name}"
         self._attr_unique_id = f"admob_{period}_{metric}"
 
@@ -90,6 +104,17 @@ class AdMobMetricSensor(CoordinatorEntity, SensorEntity):
             self._attr_icon = "mdi:server-network"
         elif metric == "clicks":
             self._attr_icon = "mdi:cursor-default-click"
+
+    @property
+    def device_info(self):
+        """Return device info."""
+        from .const import DOMAIN
+        return {
+            "identifiers": {(DOMAIN, self._entry_id)},
+            "name": "AdMob Stats",
+            "manufacturer": "Google",
+            "model": "AdMob API",
+        }
 
     @property
     def native_value(self) -> int | None:
