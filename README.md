@@ -18,7 +18,7 @@ Monitor your Google AdMob statistics in Home Assistant.
 2. Copy the `custom_components/admob_stats` folder to your Home Assistant config
 3. Restart Home Assistant
 4. Add the integration via UI (Settings > Integrations)
-
+<BR><BR><BR>
 ## Configuration
 
 You'll need:
@@ -29,12 +29,13 @@ You'll need:
 
 See the [AdMob API docs](https://developers.google.com/admob/api/v1/auth) for setup.
 
+<BR><BR><BR>
 ## Sensors
 
 Creates 16 sensors for earnings, impressions, ad requests, and clicks across today, yesterday, this month, and last month.
 
 
-
+<BR><BR><BR>
 ## How To Get Login Details
 
 ### Setting Up AdMob API Credentials for Home Assistant
@@ -102,6 +103,8 @@ The refresh token allows the integration to access your AdMob data long-term wit
 4.	Sign in with your Google account (same one used for AdMob)
 5.	Click Allow to grant permissions
 
+NOTE: if you see 'Error 403: access_denied', see troubleshppting below.
+
 #### Step 3: Get the Refresh Token
 1.	Click Exchange authorization code for tokens (Step 2 on the left)
 2.	The Refresh token will appear in the response on the right side
@@ -123,7 +126,31 @@ Now you have all four credentials needed:
 •	Keep your Client Secret and Refresh Token secure - they provide access to your AdMob data<BR>
 •	The refresh token is long-lived and won't expire as long as you use it periodically<BR>
 •	If you set your OAuth consent screen to "Testing" mode, make sure your Google account is added as a test user<BR>
-•	The AdMob API has rate limits, but the integration polls at reasonable intervals to stay within limits
+•	The AdMob API has rate limits, but the integration polls at reasonable intervals to stay within limits<BR>
+
+<BR><BR><BR>
+### Troubleshooting
+
+#### Error 403: access_denied
+
+This error occurs because your OAuth consent screen is in "Testing" mode, which restricts access to only approved test users. Here's how to fix it:
+
+#### Solution 1: Add Yourself as a Test User (Quickest)
+1.	Go to Google Cloud Console
+2.	Navigate to APIs & Services > OAuth consent screen
+3.	Scroll down to Test users
+4.	Click Add Users
+5.	Enter the exact email address of the Google account you're using for AdMob and OAuth Playground
+6.	Click Save
+7.	Go back to the OAuth Playground and try authorizing again
+
+#### Solution 2: Publish the OAuth App (Alternative)
+If you don't want to manage test users, you can publish the app for personal use:
+1.	Go to APIs & Services > OAuth consent screen
+2.	Click Publish App
+3.	Confirm the action
+4.	You'll see a warning that it's unverified - this is fine for personal use
+5.	Users (including you) will see a warning screen during authorization, but you can click Advanced > Go to [App Name] (unsafe) to proceed
 
 
 
