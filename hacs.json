@@ -2,7 +2,6 @@
   "name": "AdMob Stats",
   "content_in_root": false,
   "render_readme": true,
-  "icon": "mdi:google-ads",
   "domains": [
     "admob_stats",
     "button"
