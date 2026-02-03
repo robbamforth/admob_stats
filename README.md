@@ -33,9 +33,9 @@ See the [AdMob API docs](https://developers.google.com/admob/api/v1/auth) for se
 ## Sensors
 
 Creates 16 sensors for
-- earnings<
+- earnings
 - impressions
-- ad requests<BR>
+- ad requests
 - and clicks across today
   - yesterday
   - this month
