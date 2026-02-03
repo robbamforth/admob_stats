@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AdMob Stats Setup",
+        "description": "Enter your Google AdMob API credentials. See {setup_url} for setup instructions.",
+        "data": {
+          "client_id": "OAuth Client ID",
+          "client_secret": "OAuth Client Secret",
+          "refresh_token": "OAuth Refresh Token",
+          "publisher_id": "AdMob Publisher ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to AdMob API. Please check your credentials.",
+      "unknown": "Unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This AdMob account is already configured."
+    }
+  }
+}

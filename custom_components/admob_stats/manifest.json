@@ -1,0 +1,18 @@
+{
+  "domain": "admob_stats",
+  "name": "AdMob Stats",
+  "codeowners": [
+    "@robbamforth"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/robbamforth/admob_stats",
+  "issue_tracker": "https://github.com/robbamforth/admob_stats/issues",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": [
+    "google-auth==2.27.0",
+    "google-auth-oauthlib==1.2.0",
+    "google-api-python-client==2.116.0"
+  ],
+  "version": "1.0.0"
+}
